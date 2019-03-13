@@ -1,6 +1,6 @@
 class Deck{
   private int card_size;
-  boolean[] card;
+  private boolean[] card;
   public Deck(){
     card_size = 52;
     card = new boolean[card_size];
@@ -8,5 +8,7 @@ class Deck{
       card[i] =true;
     }
   }
-
+  public boolean[] getCard(){
+    return card;
+  }
 }

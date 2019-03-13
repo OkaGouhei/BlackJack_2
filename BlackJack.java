@@ -10,15 +10,15 @@ public class BlackJack{
     // System.out.println(a.card);
     List<Integer> player_card = new ArrayList<Integer>();
     System.out.println("playerのカード");
-    deal(a.card,player_card);
-    deal(a.card,player_card);
+    deal(a.getCard(),player_card);
+    deal(a.getCard(),player_card);
     show_card(player_card);
 
     //dealer のカードが入るListを用意する
     List<Integer> dealer_card = new ArrayList<Integer>();
     System.out.println("dealerのカード");
-    deal(a.card,dealer_card);
-    deal(a.card,dealer_card);
+    deal(a.getCard(),dealer_card);
+    deal(a.getCard(),dealer_card);
     dealer_show_card(dealer_card);
 
     int draw;
@@ -29,7 +29,7 @@ public class BlackJack{
       draw =scan.nextInt();
       if (draw == 0){
         System.out.println("カードを引きます");
-        card_no_mark(deal(a.card,player_card));//引いたカードを表示
+        card_no_mark(deal(a.getCard(),player_card));//引いたカードを表示
       } else if(draw == 1){
         System.out.println("カードを引きません");
       }
@@ -49,7 +49,7 @@ public class BlackJack{
     }
     //dealer のカード 17以上になるまでカードを引く
     while(point_card(dealer_card) < 17){
-      deal(a.card,dealer_card);
+      deal(a.getCard(),dealer_card);
     }
     System.out.println("dealerのカードは");
     show_card(dealer_card);
